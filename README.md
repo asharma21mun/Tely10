@@ -66,5 +66,5 @@ Despite its limitations, analyzing road race data—such as that from the Tely 1
 
 # Conclusion
 
-Based on the statistical analysis using ANOVA and post-hoc Tukey’s test, we observe trends in VO₂max among participants over the years. Based on the statistical analysis, it is evident that lower-ranking participants are experiencing a significant decline in VO₂max values over the years. The absolute mean differences in VO₂max are particularly pronounced among these participants, indicating substantial decreases in performance. This decline reflects a broader trend of cardiorespiratory decrement within the general population, affecting the performance of lower-ranking participants negatively over time.
+Based on the statistical analysis using ANOVA and post-hoc Tukey’s test, we observe trends in VO₂max among participants over the years. it is evident that lower-ranking participants are experiencing a significant decline in VO₂max values over the years. The absolute mean differences in VO₂max are particularly pronounced among these participants, indicating substantial decreases in performance. This decline reflects a broader trend of cardiorespiratory decrement within the general population, affecting the performance of lower-ranking participants negatively over time.
 
