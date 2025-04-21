@@ -1,0 +1,3 @@
+# Introduction
+
+Numerous studies have indicated a decline in cardiorespiratory fitness (CRF) over the years. This study aims to examine whether this decline in CRF directly affects running performance, particularly in long-distance events. By analyzing running performance across different percentiles (90th, 50th, and 10th), this research seeks to offer insights into how CRF decline may influence performance in various competitive levels. Using data from major road race Tely 10, spanning 1995 to 2020, this study examines running speeds and calculates predicted VO₂max as a performance indicator.
