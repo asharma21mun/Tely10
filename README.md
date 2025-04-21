@@ -23,5 +23,10 @@ The inverse relationship between participant count and average VO₂max is parti
 
 # 3.4.5	Analyzing the 90th Percentile for Tely 10 Road Race
 
+The ANOVA results show significant differences between the group means. The F-ratio is 42.7, with an extremely small p-value (9.859E-201), confirming strong statistical significance. 
+The R2 value for this new ANOVA is approximately 0.981, which means that approximately 98.1% of the variance in the dependent variable is explained by the differences between the groups in your dataset. This suggests a moderate relationship between the groups.
+The Tukey HSD post-hoc analysis (Appendix D) reveals significant differences in mean values between various time periods. Notable significant differences include the 1978-1989 group compared to the 1996-2000, 2011-2015, and 2016-2020 groups, as well as the 1990-1995 group with the 1996-2000 and 2001-2005 groups. The 1996-2000 group shows the largest positive differences when compared to later periods, such as 2001-2005, 2006-2010, and 2011-2015, reflecting a trend of higher means in more recent years. However, several comparisons, such as between 1978-1989 and 1990-1995, and between 2006-2010 and 2021-2024, show no significant differences, indicating periods with similar or stable means. In conclusion, while there are clear upward trends in mean values in more recent decades, many comparisons do not yield significant differences, suggesting some stability between certain time periods.
+
+
 
 ![image](https://github.com/user-attachments/assets/2acbee3a-2d0f-479a-a546-84d065a10b1d)
