@@ -12,5 +12,10 @@ The data collection method employed in this study is web scraping, a process tha
 
 ## Participation and CRF trend
 
+The figure presents a dual-axis trend analysis of participant count and average VO₂max spanning from 1978 to 2023. A clear upward trajectory in participant numbers is observed over the decades, particularly from the early 2000s onward. The number of participants increased from just 38 in 1978 to a peak of 4,356 in 2017. Despite minor fluctuations, the overall growth trend suggests increasing interest and inclusivity in the event or activity being measured. However, post-2019, there is a noticeable decline in participation, likely reflecting the impact of the COVID-19 pandemic.
+Conversely, the average VO₂max, an indicator of physical exertion or intensity, show a steady decline over time. From values consistently above 45 VO₂max in the early years, the average fell to approximately 31 VO₂max by 2023. This decline suggests that while more people participated over time, the average intensity of effort decreased. 
+The inverse relationship between participant count and average VO₂max is particularly striking from the early 2000s onward. As participation surged, MET levels fell—highlighting a potential trade-off between quantity and intensity of participation. This long-term downward trend highlights a concerning decline in population-level fitness, likely influenced by lifestyle changes such as increased sedentary behavior, reduced physical activity, and broader public health shifts.
+
+
 ![image](https://github.com/user-attachments/assets/3de3a35c-fdff-467c-97d6-4d29811ae34d)
 
