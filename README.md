@@ -20,3 +20,8 @@ The inverse relationship between participant count and average VO₂max is parti
 
 ![image](https://github.com/user-attachments/assets/3de3a35c-fdff-467c-97d6-4d29811ae34d)
 
+
+# 3.4.5	Analyzing the 90th Percentile for Tely 10 Road Race
+
+
+![image](https://github.com/user-attachments/assets/2acbee3a-2d0f-479a-a546-84d065a10b1d)
