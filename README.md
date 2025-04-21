@@ -21,7 +21,7 @@ The inverse relationship between participant count and average VO₂max is parti
 ![image](https://github.com/user-attachments/assets/3de3a35c-fdff-467c-97d6-4d29811ae34d)
 
 
-# Analyzing the 90th Percentile for Tely 10 Road Race
+## Analyzing the 90th Percentile for Tely 10 Road Race
 
 The ANOVA results show significant differences between the group means. The F-ratio is 42.7, with an extremely small p-value (9.859E-201), confirming strong statistical significance. 
 The R2 value for this new ANOVA is approximately 0.981, which means that approximately 98.1% of the variance in the dependent variable is explained by the differences between the groups in your dataset. This suggests a moderate relationship between the groups.
