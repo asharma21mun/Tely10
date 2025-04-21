@@ -18,5 +18,5 @@ The inverse relationship between participant count and average VO₂max is parti
 
 
 
-                              ![image](https://github.com/user-attachments/assets/3de3a35c-fdff-467c-97d6-4d29811ae34d)
+![image](https://github.com/user-attachments/assets/3de3a35c-fdff-467c-97d6-4d29811ae34d)
 
