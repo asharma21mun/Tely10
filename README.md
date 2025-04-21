@@ -17,5 +17,6 @@ Conversely, the average VO₂max, an indicator of physical exertion or intensity
 The inverse relationship between participant count and average VO₂max is particularly striking from the early 2000s onward. As participation surged, MET levels fell—highlighting a potential trade-off between quantity and intensity of participation. This long-term downward trend highlights a concerning decline in population-level fitness, likely influenced by lifestyle changes such as increased sedentary behavior, reduced physical activity, and broader public health shifts.
 
 
-![image](https://github.com/user-attachments/assets/3de3a35c-fdff-467c-97d6-4d29811ae34d)
+
+                              ![image](https://github.com/user-attachments/assets/3de3a35c-fdff-467c-97d6-4d29811ae34d)
 
