@@ -12,4 +12,5 @@ The data collection method employed in this study is web scraping, a process tha
 
 ## Participation and CRF trend
 
-![image](https://github.com/user-attachments/assets/eb885cce-dc25-493e-af15-011ed16d1654)
+![image](https://github.com/user-attachments/assets/3de3a35c-fdff-467c-97d6-4d29811ae34d)
+
