@@ -16,11 +16,9 @@ The figure presents a dual-axis trend analysis of participant count and average 
 Conversely, the average VO₂max, an indicator of physical exertion or intensity, show a steady decline over time. From values consistently above 45 VO₂max in the early years, the average fell to approximately 31 VO₂max by 2023. This decline suggests that while more people participated over time, the average intensity of effort decreased. 
 The inverse relationship between participant count and average VO₂max is particularly striking from the early 2000s onward. As participation surged, MET levels fell—highlighting a potential trade-off between quantity and intensity of participation. This long-term downward trend highlights a concerning decline in population-level fitness, likely influenced by lifestyle changes such as increased sedentary behavior, reduced physical activity, and broader public health shifts.
 
+![image](https://github.com/user-attachments/assets/3de3a35c-fdff-467c-97d6-4d29811ae34d)
 
 ## Participation and CRF trend by Age Group
-
-
-![image](https://github.com/user-attachments/assets/f2aed65b-87b9-4394-8e0c-bf46eb0535cc)
 
 The chart provides a comprehensive overview of age-wise participation trends from 1990 to 2023. Early in the timeline (1990–1999), participation was relatively low, with fewer than 1,000 participants per year, and the largest contributions came from the 30–39 and 40–49 age brackets. During this period, younger (<20) and older (60+) participants made up a very small portion of the total.
 From the early 2000s onward, especially post-2005, a significant increase in total participation is observed, with numbers surpassing 2,000 participants annually. This upward trend peaks between 2011 and 2016, where total counts exceed 4,000 per year. In these peak years, the 30–39 and 40–49 groups dominate, jointly making up more than half of the total sample in many years. The 50–59 group also shows substantial growth in this period, reflecting aging cohorts who continue to participate.
@@ -29,8 +27,7 @@ The inclusion of the U20 and 70+ groups remain minimal throughout the years, tho
 
 
 
-
-![image](https://github.com/user-attachments/assets/3de3a35c-fdff-467c-97d6-4d29811ae34d)
+![image](https://github.com/user-attachments/assets/f2aed65b-87b9-4394-8e0c-bf46eb0535cc)
 
 
 ## Analyzing the 90th Percentile for Tely 10 Road Race
