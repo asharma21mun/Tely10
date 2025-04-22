@@ -19,12 +19,15 @@ The inverse relationship between participant count and average VO₂max is parti
 
 ## Participation and CRF trend by Age Group
 
+
+![image](https://github.com/user-attachments/assets/f2aed65b-87b9-4394-8e0c-bf46eb0535cc)
+
 The chart provides a comprehensive overview of age-wise participation trends from 1990 to 2023. Early in the timeline (1990–1999), participation was relatively low, with fewer than 1,000 participants per year, and the largest contributions came from the 30–39 and 40–49 age brackets. During this period, younger (<20) and older (60+) participants made up a very small portion of the total.
 From the early 2000s onward, especially post-2005, a significant increase in total participation is observed, with numbers surpassing 2,000 participants annually. This upward trend peaks between 2011 and 2016, where total counts exceed 4,000 per year. In these peak years, the 30–39 and 40–49 groups dominate, jointly making up more than half of the total sample in many years. The 50–59 group also shows substantial growth in this period, reflecting aging cohorts who continue to participate.
 Interestingly, the 20–29 group steadily grows but never surpasses the middle-aged groups, suggesting either lower participation interest or lower eligibility in this demographic. Post-2016, a slight decline in overall participation is noted, though the age distribution pattern remains consistent.
 The inclusion of the U20 and 70+ groups remain minimal throughout the years, though they show slight growth post-2010, likely due to better outreach or broader data collection. The graph effectively illustrates both demographic engagement trends and the expansion of the participant base over time, which may reflect increased program popularity, improved data infrastructure, or greater public health interest in the studied phenomenon.
 
-![image](https://github.com/user-attachments/assets/f2aed65b-87b9-4394-8e0c-bf46eb0535cc)
+
 
 
 ![image](https://github.com/user-attachments/assets/3de3a35c-fdff-467c-97d6-4d29811ae34d)
