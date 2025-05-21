@@ -26,6 +26,8 @@ import statsmodels.api as sm
 from statsmodels.formula.api import ols
 from sklearn.linear_model import LinearRegression
 from scipy.stats import f_oneway
+import matplotlib.pyplot as plt
+
 
 
 
@@ -248,6 +250,7 @@ for year, url in year_link:
 
 
 
+
 # Function to grooup years into a groups of 5 years. From 1978-1989, we are grouping the years into a single group since we don't have a lot of data berween those years.
 
 def year_group(x):
@@ -377,14 +380,240 @@ def age_cat_filter(x):
 
 
 
+
 # Reading the Data
 
-excel_file_path = r'C:\Users\Monk\Codebase\Tely 10\Tely 10 All Data v2.xlsx'
+excel_file_path = r'C:\Users\Monk\OneDrive\Documents\Kinesiology\v2\Tely 10 All Data.xlsx'
 perc_90 = pd.read_excel(excel_file_path, sheet_name='10th Percentile')
 perc_50 = pd.read_excel(excel_file_path, sheet_name='50th Percentile')
 perc_10 = pd.read_excel(excel_file_path, sheet_name='90th Percentile')
 all_data = pd.read_excel(excel_file_path, sheet_name='All Data')
 
+
+
+# Distribution of Perticipant Count by Age Group Plot
+
+# Define the specific order of age groups (matching your original chart)
+age_order = all_data.query('  `Age_Cat.1`.notnull()     ')['Age_Cat.1'].unique().tolist()
+
+# Create a pivot table with counts of participants by Year and Age group
+pivot_df = all_data.pivot_table(index='Year', columns='Age_Cat.1', aggfunc='size', fill_value=0)
+
+# Ensure columns follow correct order and fill missing age groups
+pivot_df = pivot_df.reindex(columns=age_order, fill_value=0)
+pivot_df = pivot_df.sort_index()
+
+# Plotting
+fig, ax = plt.subplots(figsize=(12, 6))
+
+bottom = [0] * len(pivot_df)
+colors = [
+    '#17becf',  # U20
+    '#1f77b4',  # 20-29
+    '#ff7f0e',  # 30-39
+    '#2ca02c',  # 40-49
+    '#d62728',  # 50-59
+    '#9467bd',  # 60-69
+    '#8c564b',  # 70-79
+    '#e377c2',  # 80+
+]
+
+for i, age_group in enumerate(age_order):
+    ax.bar(pivot_df.index, pivot_df[age_group], bottom=bottom, label=age_group, color=colors[i])
+    bottom = [sum(x) for x in zip(bottom, pivot_df[age_group])]
+
+# Formatting
+ax.set_title('Distribution of Participant Count by Age Group', fontsize=14)
+ax.set_xlabel('Year')
+ax.set_ylabel('Participant Count')
+ax.legend(title='Age Group', bbox_to_anchor=(1.02, 1), loc='upper left')
+plt.tight_layout()
+plt.show()
+
+# Estimateed Average Vo2 and Participant Count from 1978 to 2023.
+
+all_data_agg = all_data.groupby('Year').agg({'Vo2':'mean','Name':'count'}).reset_index()
+all_data_agg = all_data_agg.rename(columns = {'Name':'Participant_count','Vo2':'Avg_Vo2'})
+
+# Filter out missing data
+cleaned_data = [(df['Year'],df['Avg_Vo2'],df['Participant_count']) for indx, df in all_data_agg.iterrows() ]
+years_cleaned, vo2_cleaned, count_cleaned = zip(*cleaned_data)
+
+# Plotting
+fig, ax1 = plt.subplots(figsize=(12, 6))
+
+# VO2 line (left y-axis)
+ax1.plot(years_cleaned, vo2_cleaned, color='black', marker='o', label='Estimated VO₂')
+ax1.set_ylabel('Estimated VO₂ (mL/kg/min)', color='black')
+ax1.tick_params(axis='y', labelcolor='black')
+
+# Participant count line (right y-axis)
+ax2 = ax1.twinx()
+ax2.plot(years_cleaned, count_cleaned, color='gray', linestyle='--', marker='s', label='Participant Count')
+ax2.set_ylabel('Participant Count', color='gray')
+ax2.tick_params(axis='y', labelcolor='gray')
+
+# Titles and layout
+ax1.set_title('Estimated Average VO₂ and Participant Count from 1978 to 2023')
+ax1.set_xlabel('Year')
+ax1.grid(True)
+
+plt.tight_layout()
+plt.show()
+
+# Average Vo2max Over the Years for 10th Percentile
+
+# Aggregating the data
+
+perc_90_agg = perc_90.groupby('Year_group')['Vo2max(mL/kg/min)'].agg(['mean', 'std']).reset_index()
+
+# Plots
+
+# Convert to numpy arrays
+x = np.arange(len(perc_90_agg["Year_group"]))
+y = perc_90_agg["mean"].to_numpy()
+sd = perc_90_agg["std"].to_numpy()
+
+# Plotting
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.plot(x, y, marker='o', color='black', label='Average VO₂max')
+ax.fill_between(x, y - sd, y + sd, color='gray', alpha=0.3, label='±1 SD')
+
+# Formatting
+ax.set_xticks(x)
+ax.set_xticklabels(perc_90_agg["Year_group"], rotation=45)
+ax.set_ylabel("Average VO₂max (mL/kg/min)")
+ax.set_title("Average VO₂max Over the Years")
+ax.legend()
+ax.grid(True)
+
+plt.tight_layout()
+plt.show()
+
+# Average Vo2max Over the Years for 10th Percentile Male
+
+# 10th Percentile Males
+
+perc_90_M = perc_90.query('Sex == "M"')
+
+# Aggregating the data
+
+perc_90_M_agg = perc_90_M.groupby('Year_group')['Vo2max(mL/kg/min)'].agg(['mean', 'std']).reset_index()
+
+# Plots
+
+# Convert to numpy arrays
+x = np.arange(len(perc_90_M_agg["Year_group"]))
+y = perc_90_M_agg["mean"].to_numpy()
+sd = perc_90_M_agg["std"].to_numpy()
+
+# Plotting
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.plot(x, y, marker='o', color='black', label='Average VO₂max')
+ax.fill_between(x, y - sd, y + sd, color='gray', alpha=0.3, label='±1 SD')
+
+# Formatting
+ax.set_xticks(x)
+ax.set_xticklabels(perc_90_M_agg["Year_group"], rotation=45)
+ax.set_ylabel("Average VO₂max (mL/kg/min)")
+ax.set_title("Average VO₂max Over the Years")
+ax.legend()
+ax.grid(True)
+
+plt.tight_layout()
+plt.show()
+
+# Average Vo2max Over the Years for 10th Percentile Female
+
+
+# 10th Percentile Females
+
+perc_90_F = perc_90.query('Sex == "F"')
+
+# Aggregating the data
+
+perc_90_F_agg = perc_90_F.groupby('Year_group')['Vo2max(mL/kg/min)'].agg(['mean', 'std']).reset_index()
+
+# Plots
+
+# Convert to numpy arrays
+x = np.arange(len(perc_90_F_agg["Year_group"]))
+y = perc_90_F_agg["mean"].to_numpy()
+sd = perc_90_F_agg["std"].to_numpy()
+
+# Plotting
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.plot(x, y, marker='o', color='black', label='Average VO₂max')
+ax.fill_between(x, y - sd, y + sd, color='gray', alpha=0.3, label='±1 SD')
+
+# Formatting
+ax.set_xticks(x)
+ax.set_xticklabels(perc_90_F_agg["Year_group"], rotation=45)
+ax.set_ylabel("Average VO₂max (mL/kg/min)")
+ax.set_title("Average VO₂max Over the Years")
+ax.legend()
+ax.grid(True)
+
+plt.tight_layout()
+plt.show()
+
+# Average Vo2max Over the Years for 50th Percentile
+
+# Aggregating the data
+
+perc_50_agg = perc_50.groupby('Year_group')['Vo2max(mL/kg/min)'].agg(['mean', 'std']).reset_index()
+
+# Plots
+
+# Convert to numpy arrays
+x = np.arange(len(perc_50_agg["Year_group"]))
+y = perc_50_agg["mean"].to_numpy()
+sd = perc_50_agg["std"].to_numpy()
+
+# Plotting
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.plot(x, y, marker='o', color='black', label='Average VO₂max')
+ax.fill_between(x, y - sd, y + sd, color='gray', alpha=0.3, label='±1 SD')
+
+# Formatting
+ax.set_xticks(x)
+ax.set_xticklabels(perc_50_agg["Year_group"], rotation=45)
+ax.set_ylabel("Average VO₂max (mL/kg/min)")
+ax.set_title("Average VO₂max Over the Years")
+ax.legend()
+ax.grid(True)
+
+plt.tight_layout()
+plt.show()
+
+# Average Vo2max Over the Years for 90th Percentile
+
+# Aggregating the data
+
+perc_10_agg = perc_10.groupby('Year_group')['Vo2max(mL/kg/min)'].agg(['mean', 'std']).reset_index()
+
+# Plots
+
+# Convert to numpy arrays
+x = np.arange(len(perc_10_agg["Year_group"]))
+y = perc_10_agg["mean"].to_numpy()
+sd = perc_10_agg["std"].to_numpy()
+
+# Plotting
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.plot(x, y, marker='o', color='black', label='Average VO₂max')
+ax.fill_between(x, y - sd, y + sd, color='gray', alpha=0.3, label='±1 SD')
+
+# Formatting
+ax.set_xticks(x)
+ax.set_xticklabels(perc_10_agg["Year_group"], rotation=45)
+ax.set_ylabel("Average VO₂max (mL/kg/min)")
+ax.set_title("Average VO₂max Over the Years")
+ax.legend()
+ax.grid(True)
+
+plt.tight_layout()
+plt.show()
 
 # Plotting the data
 
@@ -484,3 +713,5 @@ tukey_perc_90.to_excel(writer, sheet_name = 'Tukey 90th')
 perc_90_agg.to_excel(writer, sheet_name = 'Avg Data 90th')
 
 writer.save()
+
+
